@@ -1,0 +1,57 @@
+
+1.# Random function to get single digit
+randomNO=$((RANDOM%10))
+echo "To get single Digit : $randomNo"
+
+2.# Random to get dice number between 1 to 6
+ran=$((RANDOM%6+1))
+echo  "Dice number between 1-6 : $ran "
+
+
+3. # add two dice number and print the result
+num1=$((RANDOM%6+1))
+num2=$((RANDOM%6+1))
+add=$(($num1+$num2))
+echo "add two random dice numbers : $add"
+
+4.# 5 Random 2 digit values
+num1=$((RANDOM%89+10))
+num2=$((RANDOM%89+10))
+num3=$((RANDOM%89+10))
+num4=$((RANDOM%89+10))
+num5=$((RANDOM%89+10))
+sum=$(($num1+$num2+$num3+$num4+$num5))
+average=$(($sum/5))
+echo  "sum of 5 numbers : $sum"
+echo  "average of 5 numbers : $average"
+
+
+
+5a. # convert inches into feets 
+
+inche=1/12
+read -p "enter inches : "  ip
+feet=$(($ip*$inche))
+
+echo " $ip inches is : $feet  feet"
+
+  
+5b. #rectangular plot of 60feet into 40 feet in meters
+sqm=10.7639
+read -p "enter width of rectangular plot in feets:" width
+read -p "enter height of rectangular plot in feets: "  height
+area=$(($width*$height))
+Area=`echo $area $sqm | awk '{num1=$1;num2=$2; print num1/num2}'`
+echo "area in square meters : $Area"
+
+
+5c. # 25 such plots in acres
+
+sqf=43560 # 1 acre = 43560 sqft
+read -p "enter width of rectangular plot in feets:" width
+read -p "enter height of rectangular plot in feets: "  height
+read -p "no of plots : " a
+b=$(($width*$height*$a))
+acre=`echo $b $sqf | awk '{print $1/$2}'`
+echo "area of 25 plots in acre : $acre"
+

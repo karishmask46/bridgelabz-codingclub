@@ -1,0 +1,361 @@
+1. # 5 random and 3 digit values and o/p will max and min 
+
+echo "---FIND THE GREATEST AND LEAST AMONG five NUMBERS---"
+first_num=$((RANDOM%899+100))
+second_num=$((RANDOM%899+100))
+third_num=$((RANDOM%899+100))
+fourth_num=$((RANDOM%899+100))
+fifth_num=$((RANDOM%899+100))
+if [ $first_num -gt $second_num ] && [ $first_num -gt $third_num ] && [ $first_num -gt $fourth_num ] && [ $first_num -gt $fifth_num>
+then
+        echo $first_num is the greatest number.
+elif [ $second_num -gt $third_num ] && [ $second_num -gt $fourth_num ] && [ $second_num -gt $fifth_num ]
+then
+        echo $second_num is the greaatest number.
+elif [ $third_num -gt $fourth_num ] && [ $third_num -gt $fifth_num ]
+then
+        echo $third_num is the greaatest number.
+elif [ $fourth_num -gt $fifth_num ]
+then
+         echo $fourth_num is the greaatest number.
+else
+        echo $fifth_num is the greatest number.
+fi
+
+if [ $first_num -lt $second_num ] && [ $first_num -lt $third_num ] && [ $first_num -lt $fourth_num ] && [ $first_num -lt $fifth_num>
+then
+        echo $first_num is the least number.
+elif [ $second_num -lt $third_num ] && [ $second_num -lt $fourth_num ] && [ $second_num -lt $fifth_num ]
+then
+        echo $second_num is the least number.
+elif [ $third_num -lt $fourth_num ] && [ $third_num -lt $fifth_num ]
+then
+        echo $third_num is the least number.
+elif [ $fourth_num -lt $fifth_num ]
+then
+         echo $fourth_num is the least number.
+else
+        echo $fifth_num is the least number.
+fi
+
+2.#  day of month between march 20 and june 20
+
+read -p  "Enter month 3-6 : " month
+read -p  "enter day : " day
+march=3
+april=4
+may=5
+june=6
+if [ $month -eq $march ]
+then
+    if [ $day -ge 20 ] && [ $day -le 31 ]
+    then
+        echo "True, the day of month b/w march 20 to march 31 "
+    else
+        echo "enter num between 20-31 "
+    fi
+elif [ $month -eq $april ]
+then
+     if [ $day -ge 1 ] && [ $day -le 30 ]
+      then
+        echo "True, the day of month b/w april 1 to april 30 "
+      else
+        echo "enter num between 1-30"
+     fi
+elif [ $month -eq $may ]
+then
+     if [ $day -ge 1 ] && [ $day -le 31 ]
+      then
+        echo "True, the day of month b/w may 1 to may 31"
+      else
+        echo "enter num between 1-31, may having 31 days only "
+
+     fi
+elif [ $month -eq $june ]
+then
+     if [ $day -ge 1 ] && [ $day -le 20 ]
+      then
+        echo "True, the day of month b/w june 1 to june 20 "
+      else
+          echo "enter num between 1-20 "
+
+     fi
+else
+    echo "enter day of month must be between March 20 and June 20"
+fi
+
+
+3.# Entered input is leap year or not
+read -p "enter a year : " year
+if [ $(($year%4)) -eq 0 ]
+then
+echo "it is a leap year : $year"
+else
+echo "it is not a leap year :$year"
+fi
+
+
+4.# Simulate a coin flip and print out "heads" and "tails"
+
+coin=$((RANDOM%2))
+if [ $coin -eq 0 ]
+then
+echo "heads"
+else
+echo "tails"
+fi
+ 
+          with if,elif and else
+
+
+1.# single digit in if/else
+
+read -p "Enter single digit : " a
+if [ $a -eq 1 ]
+then
+        echo "One"
+elif [ $a -eq 2 ]
+then
+        echo "Two "
+elif [ $a -eq 3 ]
+then
+        echo "Three "
+
+elif [ $a -eq 4 ]
+then
+        echo "Four "
+
+elif [ $a -eq 5 ]
+then
+        echo "Five "
+
+elif [ $a -eq 6 ]
+then
+        echo "six "
+
+elif [ $a -eq 7 ]
+then
+        echo "Seven "
+
+elif [ $a -eq 8 ]
+then
+        echo "Eight "
+
+
+2. #Read a number and display week day
+
+read -p "Enter a number : " a
+if [ $a -eq 1 ]
+then
+        echo "sunday"
+elif [ $a -eq 2 ]
+then
+        echo "monday"
+elif [ $a -eq 3 ]
+then
+        echo "tuesday"
+
+elif [ $a -eq 4 ]
+then
+        echo "wednesday"
+
+elif [ $a -eq 5 ]
+then
+        echo "thursday"
+
+elif [ $a -eq 6 ]
+then
+        echo "friday"
+
+elif [ $a -eq 7 ]
+then
+        echo "saturday"
+else
+
+      echo "Enter correct Number"
+fi
+
+3. # read a number 1,10,100,1000.... in if/else
+
+read -p "Enter a number : " a
+if [ $a -le 9 ]
+then
+        echo "units place"
+elif [ $a -ge 10 ] && [ $a -le 99 ]
+then
+        echo "tens place"
+elif [ $a -ge 100 ] && [ $a -le 999 ]
+then
+        echo "hundreds place"
+
+elif [ $a -ge 1000 ] && [ $a -le 99999 ]
+then
+        echo "thousands place"
+
+elif [ $a -ge 100000 ] && [ $a -lt 10000000 ]
+then
+        echo "lakhs place"
+else
+
+      echo "Enter correct Number"
+fi
+
+
+4.# Enter 3 num so arthmetic operation and find max, min
+
+read -p "Enter 1st num: " a
+read -p "Enter 2nd num: " b
+read -p "Enter 3rd num: " c
+aperation1=`echo $a $b $c | awk '{print $1+$2*$3}'`
+aperation2=`echo $a $b $c | awk '{print $1%$2+$3}'`
+aperation3=`echo $a $b $c | awk '{print $1+$2/$3}'`
+aperation4=`echo $a $b $c | awk '{print $1*$2+$3}'`
+
+if [ $aperation1 -gt $aperation2 ] && [ $aperation1 -gt $aperation3 ] && [ $aperation1 -gt $aperation4 ]
+then
+        echo "$aperation1 is the greatest number."
+elif [ $aperation2 -gt $aperation3 ] && [ $aperation2 -gt $aperation4 ]
+then
+        echo "$aperation2 is the greatest number."
+elif [ $aperation3 -gt $aperation4 ]
+then
+        echo "$aperation3 is the greatest number."
+
+else
+         echo "$aperation4 is the greatest number."
+
+fi
+
+if [ $aperation1 -lt $aperation2 ] && [ $aperation1 -lt $aperation3 ] && [ $aperation1 -lt $aperation4 ]
+then
+        echo "$aperation1 is the least number."
+elif [ $aperation2 -lt $aperation3 ] && [ $aperation2 -lt $aperation4 ]
+then
+        echo "$aperation2 is the least number."
+elif [ $aperation3 -lt $aperation4 ]
+then
+        echo "$aperation3 is the least number."
+else
+         echo "$aperation4 is the least number."
+
+fi    
+            
+
+1.# Read a single digit number and write in word using case
+
+read -p "enter single digit num: " digit
+case $digit in
+
+        1)
+                echo "One"
+        ;;
+        2)
+                echo "Two"
+        ;;
+        3)
+                echo "Three"
+        ;;
+        4)
+                echo "Four"
+        ;;
+        5)
+                echo "Five"
+        ;;
+        6)
+                echo "Six"
+        ;;
+        7)
+                echo "Seven"
+        ;;
+        8)
+                echo "Eight"
+        ;;
+        9)
+                echo "Nine"
+        ;;
+        *)
+                echo " please,enter only single digit number"
+        ;;
+esac
+
+2. #read a number and display week days
+
+read -p "enter a number: " day
+case $day in
+
+        1)
+                echo "sunday"
+        ;;
+        2)
+                echo "monday"
+        ;;
+        3)
+                echo "Tuesday"
+        ;;
+        4)
+                echo "wednesday"
+        ;;
+        5)
+                echo "thursday"
+        ;;
+        6)
+                echo "friday"
+        ;;
+        7)
+                echo "Saturday"
+        ;;
+        *)
+                echo " please,enter a valid number"
+        ;;
+esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
